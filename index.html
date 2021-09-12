@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="DesafioJs.css">
+    <title>Dragon Ball Javascript Game</title>
+    
+</head>
+<body class="background" id="background">
+  
+
+    <audio id="audio" src="music/tema.mp3" type="audio/mpeg" autoplay controls loop volume="0.7"></audio>
+    <audio id="btnSound" src="music/btnSound.mp3" type="audio/mpeg"></audio>
+    <audio id="esquivar" src="music/DBesquivar.mp3" type="audio/mpeg"></audio>
+    <audio id="punch" src="music/punch.mp3" type="audio/mpeg"></audio>
+    <audio id="atkSpecial" src="music/AtkSpecial.mp3" type="audio/mpeg"></audio>
+  
+    <!--pantalla1-->    
+        <div id="pantalla1">
+        <a class="button__card choose" id="btnJugar">Dragon Ball Javascript Game</a>
+        <a class="button__card choose" id="disclaimer">Este juego aún no tiene su versión mobile.<br> Visita la web desde tu PC para jugar!</a>
+        <div id="personajes"></div>
+        </div>
+
+    <!--pantalla2-->    
+        <div class="container" id="pantalla2">
+            <div class="button__card choose" id="elegir">Elige un personaje para librar la batalla</div>
+            <section class="cardSection">
+              <div class="l-container" id="cardContainer">
+              </div>
+            </section>
+        </div>
+        
+      <!--pantalla2.2-->   
+        <div id="pantalla2b">
+          <img src="img/vegeta1.png" style="display:none" id="vegeta1">
+          <a class="button__card" id="cartelFinal"></a>
+        </div>
+
+        <!--pantalla3-->  
+        <img class="light" src="img/light.png">
+        <img class="backgroundBattleShake" src="img/planetatierrared.png">
+
+            <div id="pantalla3">           
+                <div class="button__card choose" id="battle1">Primera Batalla: Vegeta<br><button class="draw" id="luchar">Luchar</button></div>
+                
+                <div class="container fightButtons">
+                  <div class="row">
+                    <div class="col-md-6 col-mx-12 rowButtons" >
+                      <div id="atkBtn">
+                        <div class="button__card atacar1 atk" id="golpeSimple">Golpe Simple<span class="popover">Probabilidad de acierto 100% <br>Salud -10%</span></div>
+                        <div class="button__card atacar2 atk" id="golpeEspecial"><span id="Especial">Golpe Especial</span><span class="popover">Probabilidad de acierto 50%<br>Salud -20%</span></div>
+                        <div class="button__card atacar3 atk" id="golpeMortal"><span id="Mortal">Golpe Mortal</span><span class="popover">Probabilidad de acierto 33%<br>Salud -30%</span></div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-mx-12 rowPlayer2">
+               
+                    </div>
+                  </div>  
+                </div>
+                  
+                
+                <div class="container battle">
+                    <div class="row">
+                        <div class="col-md-6 col-mx-12 rowPlayer1" >
+                            <img id="player1" class="player1">
+                            <img id="player1Tele" class="player1" style="display:none;">
+                            <img id="player1Atk" class="player1" style="display:none;">
+                            <img id="player1AtkSp" class="player1" style="display:none;">
+                            <img id="player1AtkSp2" class="player1" style="display:none;">                         <img id="player1Grey" class="player1" style="display:none;">
+                        </div>
+                        <div class="col-md-6 col-mx-12 rowPlayer2">
+                            <img class="vegeta" id="vegeta" src="img/Vegeta.png">
+                            <img class="vegeta" id="vegetaTele" style="display:none;" src="img/vegetaTele.png">
+                            <img class="vegeta" id="vegetaAtk" style="display:none;" src="img/vegetaAtk.png">
+                            <img class="vegeta" id="vegetaAtkSp" style="display:none;" src="img/vegetaAtkSp.png">
+                            <img class="vegeta" id="vegetaGrey" style="display:none;" src="img/vegetaGrey.png">
+                        </div>
+                    </div>
+                 </div>
+                 <div class="row healthRow">
+                  <div class="col-md-6 col-mx-12 player1HealtBar" >
+                    <div id="playerName"></div>
+                    <div class="progress-bar" id="saludPlayer1">                              
+                      <div class="progress-bar-value">100%</div>
+                      <div class="progress-bar-fill"></div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-mx-12 healthBarEnemy">
+                    <div><p class="healthName">VEGETA</p></div>
+                    <div class="progress-bar" id="saludPlayer2">                              
+                      <div class="progress-bar-value">100%</div>
+                      <div class="progress-bar-fill"></div>
+                    </div>
+                  </div>                      
+                </div>
+              </div>
+            </div>
+
+        <!--pantalla4-->    
+        <div id="pantalla4">
+          <img style="display:none" id="player1Defeated">
+        </div>
+
+        <!--pantalla5-->    
+        <div id="pantalla5">
+          <a class='button__card'>
+            <label for="name">Has ganado el juego, ingresa tu nombre para entrar al ranking.</label>
+            <input name="name" type="text" id="userName" placeholder="Nombre" color="black">
+            <button class="draw" id="score">CONTINUAR</button></a></div>
+        </div>
+
+        <!--pantalla6-->    
+        <div id="pantalla6">
+          <a class='button__card'>
+            <h2>Guerreros que han ganado este juego</h2>
+            <p class="parrafo__Score" id="ranking"></p>
+          </a>  
+        </div>        
+        
+      
+    <!--JQuery library-->      
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!--Custom Javascript File-->    
+    <script src="DesafioJS.js"></script>
+</body>
+</html>

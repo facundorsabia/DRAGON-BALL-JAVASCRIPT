@@ -1,0 +1,60 @@
+
+[ {
+    "nombre": "Goku",
+    "raza":"Saiyajin",
+    "procedencia": "Planeta Vegeta",
+    "transformacion": "Super Saiyajin",
+    "habilidades": [
+        "Kamehameha",
+        "Genki-dama",
+        "Kaio-Ken",
+        "Lectura de mentes"]
+    },
+    {
+    "nombre": "Piccolo",
+    "raza":"Namekiano",
+    "procedencia": "Planeta Namekusei",
+    "transformacion": "Gran Namekiano",
+    "habilidades": [
+        "Regeneración",
+        "Super Audición",
+        "Telekinesis",
+        "Transferencia de ki", 
+        "Granada Infernal",
+        "Makkankosappo"]
+    },
+    {
+        "nombre": "Krillin",
+        "raza":"Terrícola",
+        "procedencia": "Planeta Tierra",
+        "transformacion": "Sin Ego",
+        "habilidades": [
+            "Energía Desatada",
+            "Kamehameha",
+            "Kienzan",
+            "Dispersion Bala"]
+    },
+    {
+        "nombre": "Gohan",
+        "raza":"Saiyajin",
+        "procedencia": "Planeta Vegeta",
+        "transformacion": "Super Saiyajin",
+        "habilidades": [
+            "Masenko",
+            "Onda de Ki", 
+            "Kamehameha",
+            "Onda Explosiva"]
+    },
+    {
+        "nombre": "Vegeta",
+        "raza":"Namekiano",
+        "procedencia": "El Planeta Vegeta",
+        "transformacion": "Gran Namekiano",
+        "habilidades": [
+            "Cañón Galick",
+            "Bombardero Fotónico",
+            "Destrucción", 
+            "Explosión Final",
+            "Destello Final"]
+    }
+]
